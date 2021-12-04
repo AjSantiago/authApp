@@ -1,0 +1,18 @@
+<!-- <pre *ngIf="auth.user$ | async as user">
+  <code>{{user | json}} </code>
+</pre> -->
+
+<div class="row" *ngIf="auth.user$ | async as user">
+  <div class="col-md-4">
+    <img [src]="user.picture" class="img-fluid" />
+  </div>
+  <div class="col-md-8">
+    <ul class="list-group">
+      <li class="list-group-item">{{ user.name }}</li>
+      <li class="list-group-item">{{ user.email }}</li>
+      <li class="list-group-item">
+        {{ user.updated_at | date: "dd MM yyyy" }}
+      </li>
+    </ul>
+  </div>
+</div>
